@@ -1,3 +1,4 @@
 {
-  "extends": ["eslint:recommended", "react-minimal"]
+  "extends": ["eslint:recommended", "react-minimal"],
+  "parser": "@babel/eslint-parser"
 }

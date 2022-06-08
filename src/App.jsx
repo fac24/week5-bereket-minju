@@ -4,7 +4,7 @@ import Search from "./components/search";
 // import CategoryFilter from "./components/CategoryFilter";
 
 function App() {
-  const [search, setSearch] = React.useState("");
+  const [search, setSearch] = React.useState(false);
 
   const [min, setMin] = React.useState(0.5);
   const [max, setMax] = React.useState(9);
@@ -12,15 +12,33 @@ function App() {
   return (
     <main>
       <section className="filters">
-        <h1>Burger Place</h1>
+        <h1>Filter</h1>
         <form>
-          <Filter min={min} setMin={setMin} max={max} setMax={setMax} />
+          {/* <Filter min={min} setMin={setMin} max={max} setMax={setMax} /> */}
           {/* <CategoryFilter category={category} setCategory={setCategory} /> */}
         </form>
       </section>
       <section className="movies">
-        <h2>Dishes</h2>
-        <Search min={min} max={max} category={category} />
+        <h2>Search Movie</h2>
+        <div className="container">
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+              setSearch(event.target.search.value);
+            }}
+          >
+            <label htmlFor="search">
+              <input
+                type="search"
+                name="search"
+                id="search-form"
+                placeholder="Search for..."
+              />
+            </label>
+            <button type="submit">Search</button>
+          </form>
+          <Search search={search}></Search>
+        </div>
       </section>
     </main>
   );
