@@ -4,6 +4,8 @@ import Search from "./components/search";
 // import CategoryFilter from "./components/CategoryFilter";
 
 function App() {
+  const [search, setSearch] = React.useState("");
+
   const [min, setMin] = React.useState(0.5);
   const [max, setMax] = React.useState(9);
   // const [category, setCategory] = React.useState("all");
