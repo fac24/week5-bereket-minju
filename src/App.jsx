@@ -5,9 +5,11 @@ import Search from "./components/search";
 import Movies from "./components/movies";
 import CategoryFilter from "./components/CategoryFilter";
 
-function App() {
-  const [search, setSearch] = React.useState(false);
 
+function App() {
+
+
+  const [search, setSearch] = React.useState(false);
   const [min, setMin] = React.useState(1900);
   const [max, setMax] = React.useState(2025);
   const [category, setCategory] = React.useState("all");
@@ -32,7 +34,10 @@ function App() {
                 placeholder="Search for..."
               />
             </label>
-            <button type="submit">Search</button>
+             
+               <button type="submit">Search</button>
+  `
+           
           </form>
           <Search search={search}></Search>
         </fieldset>
