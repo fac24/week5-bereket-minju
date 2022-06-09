@@ -1,5 +1,6 @@
 import React from "react";
 import parse from "html-react-parser";
+import styled from "styled-components";
 
 function Movies({ min, max }) {
   //to remove the false positive named movie(automatically generated at first)
@@ -16,6 +17,7 @@ function Movies({ min, max }) {
     if (releaseYear >= min && releaseYear <= max) {
       title = key;
       list += /*html*/ ` 
+     
           <li>
               <span>${title}</span>
               <img src="${posterURL}" alt="${title}" />
