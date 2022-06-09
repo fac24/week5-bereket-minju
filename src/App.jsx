@@ -3,11 +3,10 @@ import "./App.css";
 import YearFilter from "./components/YearFilter";
 import Search from "./components/search";
 import Movies from "./components/movies";
-import CategoryFilter from "./components/CategoryFilter";
+import { CategoryFilter } from "./components/CategoryFilter";
 
 function App() {
   const [search, setSearch] = React.useState(false);
-
   const [min, setMin] = React.useState(1900);
   const [max, setMax] = React.useState(2025);
   const [category, setCategory] = React.useState("all");
@@ -45,7 +44,7 @@ function App() {
         </fieldset>
       </section>
       <section className="movies">
-        <Movies min={min} max={max} />
+        <Movies min={min} max={max} category={category} />
       </section>
     </main>
   );
