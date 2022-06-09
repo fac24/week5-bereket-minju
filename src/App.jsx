@@ -1,6 +1,7 @@
 import React from "react";
 import Filter from "./components/filter";
 import Search from "./components/search";
+import Movies from "./components/movies";
 // import CategoryFilter from "./components/CategoryFilter";
 
 function App() {
@@ -9,16 +10,10 @@ function App() {
   const [min, setMin] = React.useState(0.5);
   const [max, setMax] = React.useState(9);
   // const [category, setCategory] = React.useState("all");
+
   return (
     <main>
-      <section className="filters">
-        <h1>Filter</h1>
-        <form>
-          {/* <Filter min={min} setMin={setMin} max={max} setMax={setMax} /> */}
-          {/* <CategoryFilter category={category} setCategory={setCategory} /> */}
-        </form>
-      </section>
-      <section className="movies">
+      <section className="search-filter">
         <h2>Search Movie</h2>
         <div className="container">
           <form
@@ -39,6 +34,16 @@ function App() {
           </form>
           <Search search={search}></Search>
         </div>
+        <div>
+          <h1>Filter</h1>
+          <form>
+            {/* <Filter min={min} setMin={setMin} max={max} setMax={setMax} /> */}
+            {/* <CategoryFilter category={category} setCategory={setCategory} /> */}
+          </form>
+        </div>
+      </section>
+      <section className="movies">
+        <Movies /> 
       </section>
     </main>
   );

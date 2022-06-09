@@ -2,7 +2,7 @@ import React from "react";
 // import API
 
 function Search({ search }) {
-  const [movie, setMovie] = React.useState();
+  const [movie, setMovie] = React.useState([]);
 
   const URL = "https://api.themoviedb.org/3/search/movie";
   const api_key = import.meta.env.VITE_TMDB_API_KEY;
@@ -10,12 +10,8 @@ function Search({ search }) {
 
   React.useEffect(() => {
     fetch(searchURL)
-      .then((response) => {
-        if (!response.ok) throw new Error(response.status);
-        return response.json();
-      })
-      .then((data) => setMovie(data))
-      .catch((error) => console.log(error));
+      .then((response) => response.json())
+      .then((data) => setMovie(data));
   }, [search]);
 
   if (search === false) {
@@ -25,10 +21,10 @@ function Search({ search }) {
     const posterURL = `https://image.tmdb.org/t/p/w500${posterPath}`;
     const title = movie.results[0].original_title;
     const release = movie.results[0].release_date;
-    console.log(title, release, posterURL);
+    // console.log(title, release, posterURL);
 
     // save the user search data to local storage
-    localStorage.setItem(title, [release, posterURL]);
+    localStorage.setItem(title, `${release},${posterURL}`);
 
     // return (
     //   <div>
