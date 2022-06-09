@@ -18,23 +18,18 @@ function Search({ search }) {
   if (search === false) {
     return <div>Loading...</div>;
   } else {
-    console.log(movie.results[0].original_title, movie.results[0].genre_ids);
+
+    const genres = movie.results[0].genre_ids;
+
     const posterPath = movie.results[0].poster_path;
     const posterURL = `https://image.tmdb.org/t/p/w500${posterPath}`;
     const title = movie.results[0].original_title;
     const release = movie.results[0].release_date;
-    // console.log(title, release, posterURL);
 
     // save the user search data to local storage
-    localStorage.setItem(title, `${release},${posterURL}`);
+    localStorage.setItem(title, `${release},${posterURL},${genres}`);
 
-    // return (
-    //   <div>
-    //     <span>{title}</span>
-    //     <img src={posterURL} alt={title} />
-    //     <span>{release}</span>
-    //   </div>
-    // );
+    return <div>{title} is added.</div>;
   }
 }
 
