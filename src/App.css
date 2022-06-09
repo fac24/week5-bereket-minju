@@ -1,0 +1,35 @@
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 1.5;
+  line-height: 1.5;
+  color: black;
+  background-color: #db0000;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  padding: 0 2em;
+}
+.form {
+  text-align: center;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 40px 25px;
+  margin-top: 50px;
+}
+legend {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+fieldset {
+  border: 1.5px solid black;
+}
+span {
+  font-size: 1em;
+}

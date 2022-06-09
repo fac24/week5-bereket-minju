@@ -1,31 +1,54 @@
 import React from "react";
 import "./App.css";
+import YearFilter from "./components/YearFilter";
+import Search from "./components/search";
+import Movies from "./components/movies";
+import { CategoryFilter } from "./components/CategoryFilter";
 
 function App() {
-  const [movie, setMovie] = React.useState(null);
-  const URL = "https://api.themoviedb.org/3/search/movie";
-  const api_key = import.meta.env.VITE_TMDB_API_KEY;
-  const searchKeyword = "django";
-  const searchURL = `${URL}?api_key=${api_key}&query=${searchKeyword}`;
+  const [search, setSearch] = React.useState(false);
+  const [min, setMin] = React.useState(1900);
+  const [max, setMax] = React.useState(2025);
+  const [category, setCategory] = React.useState("all");
 
-  React.useEffect(() => {
-    fetch(searchURL)
-      .then((result) => result.json())
-      .then((movie) => {
-        console.log(movie);
-        const posterPath = movie.results[0].poster_path;
-        const posterURL = `https://image.tmdb.org/t/p/w500${posterPath}`;
-        const title = movie.results[0].original_title;
-        const release = movie.results[0].release_date;
-        console.log(title, release, posterURL);
-        setMovie(movie);
-      });
-  });
-  if (!movie) {
-    return <div>Loading...</div>;
-  } else {
-    return <div>Week5 client side app</div>;
-  }
+  return (
+    <main>
+      <section className="search-filter">
+        <h2>Search Movie / Filter</h2>
+        <fieldset className="container">
+          <legend>Search Movie</legend>
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+              setSearch(event.target.search.value);
+            }}
+          >
+            <label htmlFor="search">
+              <input
+                type="search"
+                name="search"
+                id="search-form"
+                placeholder="Search for..."
+              />
+            </label>
+
+            <button type="submit">Search</button>
+          </form>
+          <Search search={search}></Search>
+        </fieldset>
+        <fieldset>
+          <legend>Filter</legend>
+          <form>
+            <YearFilter min={min} setMin={setMin} max={max} setMax={setMax} />
+            <CategoryFilter category={category} setCategory={setCategory} />
+          </form>
+        </fieldset>
+      </section>
+      <section className="movies">
+        <Movies min={min} max={max} category={category} />
+      </section>
+    </main>
+  );
 }
 
 export default App;
