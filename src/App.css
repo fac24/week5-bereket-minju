@@ -27,18 +27,12 @@ legend {
   font-size: 20px;
   font-weight: bold;
 }
-.testimonial-avatar {
-  margin: -90px auto 30px;
-  width: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 0;
+fieldset {
+  border: 1.5px solid black;
 }
-.testimonial-name {
-  margin-bottom: 0;
-  font-weight: 600;
-  font-size: 1rem;
+span {
+  font-size: 1em;
 }
-.testimonial-name span {
-  font-weight: 400;
+
+label {
 }
