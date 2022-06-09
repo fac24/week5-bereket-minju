@@ -1,6 +1,10 @@
 import React from "react";
 import parse from "html-react-parser";
+
 import { categories } from "./CategoryFilter";
+
+import styled from "styled-components";
+
 
 function Movies({ min, max, category }) {
   //to remove the false positive named movie(automatically generated at first)
@@ -40,6 +44,7 @@ function Movies({ min, max, category }) {
       releaseYear <= max
     ) {
       list += /*html*/ ` 
+     
           <li>
               <span>${title}</span>
               <img src="${posterURL}" alt="${title}" />
