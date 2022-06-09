@@ -11,5 +11,5 @@
 - [x] Have some form of persistent state and interactivity
 
 ## Stretch criteria 
-- [ ] Save your state to localstorage so you can leave the page and come back later
+- [x] Save your state to localstorage so you can leave the page and come back later
 - [ ] Make it look great
