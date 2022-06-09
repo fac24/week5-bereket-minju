@@ -10,28 +10,33 @@ function Search({ search }) {
 
   React.useEffect(() => {
     fetch(searchURL)
-      .then((result) => result.json())
-      .then((data) => setMovie(data));
+      .then((response) => {
+        if (!response.ok) throw new Error(response.status);
+        return response.json();
+      })
+      .then((data) => setMovie(data))
+      .catch((error) => console.log(error));
   }, [search]);
 
   if (search === false) {
     return <div>Loading...</div>;
   } else {
-    console.log(movie);
     const posterPath = movie.results[0].poster_path;
     const posterURL = `https://image.tmdb.org/t/p/w500${posterPath}`;
     const title = movie.results[0].original_title;
     const release = movie.results[0].release_date;
-
     console.log(title, release, posterURL);
 
-    return (
-      <div>
-        <span>{title}</span>
-        <img src={posterURL} alt={title} />
-        <span>{release}</span>
-      </div>
-    );
+    // save the user search data to local storage
+    localStorage.setItem(title, [release, posterURL]);
+
+    // return (
+    //   <div>
+    //     <span>{title}</span>
+    //     <img src={posterURL} alt={title} />
+    //     <span>{release}</span>
+    //   </div>
+    // );
   }
 }
 
