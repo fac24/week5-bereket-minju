@@ -17,6 +17,7 @@ function Search({ search }) {
   if (search === false) {
     return <div>Loading...</div>;
   } else {
+    console.log(movie.results[0].original_title,movie.results[0].genre_ids);
     const posterPath = movie.results[0].poster_path;
     const posterURL = `https://image.tmdb.org/t/p/w500${posterPath}`;
     const title = movie.results[0].original_title;
