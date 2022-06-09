@@ -26,13 +26,7 @@ function Search({ search }) {
     // save the user search data to local storage
     localStorage.setItem(title, `${release},${posterURL},${genres}`);
 
-    // return (
-    //   <div>
-    //     <span>{title}</span>
-    //     <img src={posterURL} alt={title} />
-    //     <span>{release}</span>
-    //   </div>
-    // );
+    return <div>{title} is added.</div>;
   }
 }
 
