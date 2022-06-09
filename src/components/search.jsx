@@ -27,9 +27,6 @@ function Search({ search }) {
     const release = movie.results[0].release_date;
     console.log(title, release, posterURL);
 
-    // save the user search data to local storage
-    localStorage.setItem(title, [release, posterURL]);
-
     // return (
     //   <div>
     //     <span>{title}</span>
