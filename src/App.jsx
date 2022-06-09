@@ -35,7 +35,7 @@ function App() {
             </label>
              
                <button type="submit">Search</button>
-  `
+  
            
           </form>
           <Search search={search}></Search>
