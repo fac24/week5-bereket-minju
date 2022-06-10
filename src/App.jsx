@@ -3,10 +3,12 @@ import "./App.css";
 import YearFilter from "./components/YearFilter";
 import Search from "./components/search";
 import Movies from "./components/movies";
-import CategoryFilter from "./components/CategoryFilter";
 import { Header } from "./components/styles/Header.styled";
 import { Main } from "./components/styles/Main.styled";
 import { Container } from "./components/styles/Container.styled";
+
+import { CategoryFilter } from "./components/CategoryFilter";
+
 function App() {
   const [search, setSearch] = React.useState(false);
   const [min, setMin] = React.useState(1900);
@@ -32,6 +34,7 @@ function App() {
                   }}
                 >
                   <label htmlFor="search">
+                    Search
                     <input
                       type="search"
                       name="search"
@@ -42,30 +45,22 @@ function App() {
 
                   <button type="submit">Search</button>
                 </form>
-
                 <Search search={search}></Search>
               </fieldset>
               <fieldset>
                 <legend>Filter</legend>
-                <form>
-                  <YearFilter
-                    min={min}
-                    setMin={setMin}
-                    max={max}
-                    setMax={setMax}
-                  />
-                  <CategoryFilter
-                    category={category}
-                    setCategory={setCategory}
-                  />
-                </form>
+                <YearFilter
+                  min={min}
+                  setMin={setMin}
+                  max={max}
+                  setMax={setMax}
+                />
+                <CategoryFilter category={category} setCategory={setCategory} />
               </fieldset>
             </section>
 
             <section className="movies">
-          
-                <Movies min={min} max={max} />
-              
+              <Movies min={min} max={max} category={category} />
             </section>
           </Container>
         </main>
