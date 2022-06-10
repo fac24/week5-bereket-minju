@@ -24,6 +24,7 @@ function App() {
             }}
           >
             <label htmlFor="search">
+              Search
               <input
                 type="search"
                 name="search"
@@ -38,10 +39,8 @@ function App() {
         </fieldset>
         <fieldset>
           <legend>Filter</legend>
-          <form>
-            <YearFilter min={min} setMin={setMin} max={max} setMax={setMax} />
-            <CategoryFilter category={category} setCategory={setCategory} />
-          </form>
+          <YearFilter min={min} setMin={setMin} max={max} setMax={setMax} />
+          <CategoryFilter category={category} setCategory={setCategory} />
         </fieldset>
       </section>
       <section className="movies">
