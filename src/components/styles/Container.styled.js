@@ -21,19 +21,26 @@ export const Container = styled.section`
     flex-wrap: wrap;
   }
 
-  li > #title {
+  li {
     display: flex;
-    float: left;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 
   li > img {
-    display: flex;
-    float: right;
+    padding: 1em;
+    margin: 5px;
+    border: 2px solid red;
+    border-radius: 5px;
   }
   fieldset {
     color: red;
   }
 
+  li > span {
+    font-weight: bold;
+    font-styled: ;
+  }
   button {
     background-color: red;
     padding: 0.5em;

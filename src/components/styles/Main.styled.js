@@ -1,7 +1,9 @@
-import styled from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
-export const Main = styled.main`
-  background-color: black;
-  color: white;
-  height: 100vh;
+export const Main = createGlobalStyle`
+main {
+  @font-face {
+    font-family: @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Kdam+Thmor+Pro&display=swap');
+  }
+}
 `;

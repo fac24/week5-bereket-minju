@@ -8,7 +8,7 @@ export const Header = styled.header`
     color: black;
     background-color: red;
     margin: 0;
-    padding: 10px;
+    padding: 10px 0;
   }
 
 
