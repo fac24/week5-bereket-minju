@@ -1,5 +1,7 @@
 import React from "react";
 import { categories } from "./CategoryFilter";
+import { Container } from "./styles/Container.styled";
+import { Header } from "./styles/Header.styled";
 
 import styled from "styled-components";
 
@@ -32,16 +34,25 @@ function Movies({ min, max, category }) {
       releaseYear <= max
     ) {
       list.push(
-        <li>
-          <span>{movieTitle}</span>
-          <img src={posterURL} alt={movieTitle} />
-          <span>{release}</span>
-        </li>
+        <Container>
+        
+          <li>
+            <span id="title">{movieTitle}</span>
+            <img src={posterURL} alt={movieTitle} />
+            <span id="release">{release}</span>
+           
+          </li>
+        
+        </Container>
       );
     }
   }
 
-  return <ul>{list}</ul>;
+  return (
+    
+      <ul>{list}</ul>
+    
+  );
 }
 
 export default Movies;
