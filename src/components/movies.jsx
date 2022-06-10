@@ -1,6 +1,6 @@
 import React from "react";
 import parse from "html-react-parser";
-import styled from "styled-components";
+import { Container } from "./styles/Container.styled";
 
 function Movies({ min, max }) {
   //to remove the false positive named movie(automatically generated at first)
@@ -18,16 +18,22 @@ function Movies({ min, max }) {
       title = key;
       list += /*html*/ ` 
      
+          <Container>
           <li>
-              <span>${title}</span>
+              <Header><span id="title">${title}</span></Header>
               <img src="${posterURL}" alt="${title}" />
-              <span>${release}</span>
+              <span id="release">${release}</span>
           </li>
+          </Container>
           `;
     }
   }
 
-  return <ul>{parse(list)}</ul>;
+  return (
+    <Container>
+      <ul>{parse(list)}</ul>
+    </Container>
+  );
 }
 
 export default Movies;
