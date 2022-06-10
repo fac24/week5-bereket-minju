@@ -1,6 +1,6 @@
 # week5-bereket-minju
 
-## movie menu
+## SearchFlix
 - tmdb api, vite, eslint and REACT
 - user can add movie by search movie name
 - user can use year(min max) options to select some movie.
