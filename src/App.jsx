@@ -5,9 +5,7 @@ import Search from "./components/search";
 import Movies from "./components/movies";
 import { CategoryFilter } from "./components/CategoryFilter";
 
-
 function App() {
-
   const [search, setSearch] = React.useState(false);
   const [min, setMin] = React.useState(1900);
   const [max, setMax] = React.useState(2025);
@@ -26,6 +24,7 @@ function App() {
             }}
           >
             <label htmlFor="search">
+              Search
               <input
                 type="search"
                 name="search"
@@ -33,19 +32,15 @@ function App() {
                 placeholder="Search for..."
               />
             </label>
-             
-               <button type="submit">Search</button>
-  
-           
+
+            <button type="submit">Search</button>
           </form>
           <Search search={search}></Search>
         </fieldset>
         <fieldset>
           <legend>Filter</legend>
-          <form>
-            <YearFilter min={min} setMin={setMin} max={max} setMax={setMax} />
-            <CategoryFilter category={category} setCategory={setCategory} />
-          </form>
+          <YearFilter min={min} setMin={setMin} max={max} setMax={setMax} />
+          <CategoryFilter category={category} setCategory={setCategory} />
         </fieldset>
       </section>
       <section className="movies">
