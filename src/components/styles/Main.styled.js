@@ -1,9 +1,10 @@
-import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
-export const Main = createGlobalStyle`
-main {
-  @font-face {
-    font-family: @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Kdam+Thmor+Pro&display=swap');
-  }
-}
+export const Main = styled.main`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  border: 2px solid black;
+  border-radius: 5px;
+
 `;

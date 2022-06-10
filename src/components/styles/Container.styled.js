@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
+  * {
+    margin: 0;
+  }
    {
     display: flex;
     justify-content: center;
@@ -32,6 +35,7 @@ export const Container = styled.section`
     margin: 5px;
     border: 2px solid red;
     border-radius: 5px;
+    width: fit-content;
   }
   fieldset {
     color: red;

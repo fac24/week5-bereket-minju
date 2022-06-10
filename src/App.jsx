@@ -6,6 +6,7 @@ import Movies from "./components/movies";
 import { Header } from "./components/styles/Header.styled";
 import { Container } from "./components/styles/Container.styled";
 import { CategoryFilter } from "./components/CategoryFilter";
+import { Main } from "./components/styles/Main.styled";
 
 function App() {
   const [search, setSearch] = React.useState(false);
@@ -15,10 +16,11 @@ function App() {
 
   return (
     <>
+    <Main>
       <Header>
         <h1>SEARCHFLIX</h1>
       </Header>
-      {/* <Main> */}
+  
       <main>
         <Container>
           <section className="search-filter">
@@ -57,7 +59,7 @@ function App() {
           </section>
         </Container>
       </main>
-      {/* </Main> */}
+  </Main>
     </>
   );
 }
