@@ -23,3 +23,7 @@
 5. ``npm install``
 8. You'll also need this VITE_TMDB_API_KEY=6e69e0d62854c242163267665c16d27f ``.env`` file.
 9. When you're ready to run your local dev server, ``npm run dev`` 
+
+
+## Reference for movies
+- [movie chart](https://www.imdb.com/chart/top)
