@@ -12,7 +12,7 @@
 
 ## Stretch criteria 
 - [x] Save your state to localstorage so you can leave the page and come back later
-- [ ] Make it look great
+- [x] Make it look great
 
 ## How to run in your local dev environment
 
