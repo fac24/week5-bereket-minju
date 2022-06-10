@@ -5,7 +5,7 @@ function Search({ search }) {
   const [movie, setMovie] = React.useState([]);
 
   const URL = "https://api.themoviedb.org/3/search/movie";
-  console.log(URL)
+  console.log(URL);
   const api_key = import.meta.env.VITE_TMDB_API_KEY;
   const searchURL = `${URL}?api_key=${api_key}&query=${search}`;
 
@@ -16,9 +16,8 @@ function Search({ search }) {
   }, [search]);
 
   if (search === false) {
-    return <div>Loading...</div>;
+    return <div>Search movie title : )</div>;
   } else {
-
     const genres = movie.results[0].genre_ids;
 
     const posterPath = movie.results[0].poster_path;
