@@ -5,7 +5,6 @@ function Search({ search }) {
   const [movie, setMovie] = React.useState([]);
 
   const URL = "https://api.themoviedb.org/3/search/movie";
-  console.log(URL);
   const api_key = import.meta.env.VITE_TMDB_API_KEY;
   const searchURL = `${URL}?api_key=${api_key}&query=${search}`;
 
